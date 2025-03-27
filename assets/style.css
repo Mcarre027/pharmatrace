@@ -1,0 +1,137 @@
+/* Définition générale du corps */
+body {
+    background-color: #1e2130;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Titres */
+h2, h4 {
+    color: #4da3ff;
+    font-weight: bold;
+}
+
+/* Card Bootstrap personnalisée */
+.card {
+    background-color: #272b3f;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* Card titres */
+.card-title {
+    color: #4da3ff;
+    border-bottom: 1px solid #3b3f56;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Paragraphes descriptifs */
+.card-body p {
+    color: #c0c4d9;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Graphiques Plotly : fond transparent */
+.js-plotly-plot .plotly {
+    background-color: transparent !important;
+}
+
+/* Dropdown et Input Dash */
+.Select-control, .Select-menu-outer {
+    background-color: #272b3f !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+.Select-value-label, .Select-menu-outer div {
+    color: #ffffff !important;
+}
+
+.Select-placeholder {
+    color: #8c96a8 !important;
+}
+
+.Select-clear-zone, .Select-arrow-zone {
+    color: #4da3ff !important;
+}
+
+/* Scrollbars customisées */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e2130;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4da3ff;
+    border-radius: 20px;
+}
+
+/* Boutons Dash Bootstrap personnalisés */
+.btn-primary {
+    background-color: #4da3ff;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #3b8cd4;
+}
+
+/* Liens Dash */
+a {
+    color: #4da3ff !important;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #6fb9ff !important;
+}
+
+/* Sélection des éléments (highlight) */
+::selection {
+    background-color: #4da3ff;
+    color: #ffffff;
+}
+
+
+/* Centrage des graphes et marges */
+.graph-container {
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Justification du texte explicatif */
+.text-justify {
+    text-align: justify;
+}
+
+/* Titres */
+h2, h4 {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Espacement entre les sections */
+.mb-5 {
+    margin-bottom: 3rem;
+}
+
+/* Conteneur principal */
+.container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* Centrage horizontal des graphiques */
+.dcc-graph {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block;
+}
