@@ -1,0 +1,36 @@
+# Fichiers Python compilés
+__pycache__/
+*.py[cod]
+*.so
+
+# Environnements virtuels
+venv/
+.env/
+env/
+
+# Fichiers Jupyter
+*.ipynb_checkpoints
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers de logs
+*.log
+
+# Fichiers de déploiement ou secrets
+.env
+*.env
+
+# Fichiers de données volumineux
+data/*.csv
+data/*.xlsx
+data/*.json
+data/*.parquet
+
+# Dossiers cachés
+.idea/
+.vscode/
+
+# Dossier de cache
+.cache/
