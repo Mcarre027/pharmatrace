@@ -14,7 +14,11 @@ def sexe_distribution_graph(df):
         height=450, width=700
     )
     fig.update_traces(textposition='outside')
-    fig.update_layout(plot_bgcolor='#1e1e2f', paper_bgcolor='#1e1e2f')
+    fig.update_layout(
+        title=None,
+        plot_bgcolor='#1e1e2f', 
+        paper_bgcolor='#1e1e2f'
+    )
     return fig
 
 def age_distribution_graph(df):
@@ -31,7 +35,10 @@ def age_distribution_graph(df):
         height=450, width=700
     )
     fig.update_traces(textposition='outside')
-    fig.update_layout(plot_bgcolor='#1e1e2f', paper_bgcolor='#1e1e2f')
+    fig.update_layout(
+        title=None,
+        plot_bgcolor='#1e1e2f', paper_bgcolor='#1e1e2f'
+    )
     return fig
 
 def top_effects_graph(df):

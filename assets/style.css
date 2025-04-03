@@ -1,24 +1,34 @@
-/* Définition générale du corps */
+/* === GENERAL STYLES === */
 body {
     background-color: #1e2130;
     color: #ffffff;
     font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
-/* Titres */
-h2, h4 {
+/* === TITRES === */
+h1, h2, h3, h4, h5, h6 {
     color: #4da3ff;
     font-weight: bold;
+    margin-bottom: 15px;
 }
 
-/* Card Bootstrap personnalisée */
+
+/* === CONTENEUR PRINCIPAL === */
+.container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* === CARTES BOOTSTRAP === */
 .card {
     background-color: #272b3f;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-/* Card titres */
 .card-title {
     color: #4da3ff;
     border-bottom: 1px solid #3b3f56;
@@ -26,19 +36,38 @@ h2, h4 {
     margin-bottom: 15px;
 }
 
-/* Paragraphes descriptifs */
 .card-body p {
     color: #c0c4d9;
     font-size: 14px;
-    line-height: 1.6;
 }
 
-/* Graphiques Plotly : fond transparent */
+/* === GRAPHES PLOTLY === */
 .js-plotly-plot .plotly {
     background-color: transparent !important;
 }
 
-/* Dropdown et Input Dash */
+/* === Correction explicite du titre Plotly === */
+.js-plotly-plot .plotly .gtitle {
+    fill: #ffffff !important; /* Titre blanc, clairement visible */
+}
+
+/* === TEXTES === */
+.text-justify {
+    text-align: justify;
+}
+
+/* === BOUTONS === */
+.btn-primary {
+    background-color: #4da3ff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #3b8cd4;
+}
+
+/* === DROPDOWN & INPUT DASH === */
 .Select-control, .Select-menu-outer {
     background-color: #272b3f !important;
     color: #ffffff !important;
@@ -53,11 +82,7 @@ h2, h4 {
     color: #8c96a8 !important;
 }
 
-.Select-clear-zone, .Select-arrow-zone {
-    color: #4da3ff !important;
-}
-
-/* Scrollbars customisées */
+/* === SCROLLBAR PERSONNALISÉE === */
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -72,18 +97,7 @@ h2, h4 {
     border-radius: 20px;
 }
 
-/* Boutons Dash Bootstrap personnalisés */
-.btn-primary {
-    background-color: #4da3ff;
-    border: none;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.btn-primary:hover {
-    background-color: #3b8cd4;
-}
-
-/* Liens Dash */
+/* === LIENS === */
 a {
     color: #4da3ff !important;
     text-decoration: none;
@@ -93,45 +107,56 @@ a:hover {
     color: #6fb9ff !important;
 }
 
-/* Sélection des éléments (highlight) */
+/* === SÉLECTION TEXTE === */
 ::selection {
     background-color: #4da3ff;
     color: #ffffff;
 }
 
-
-/* Centrage des graphes et marges */
-.graph-container {
-    margin: auto;
-    padding: 10px;
-    text-align: center;
-}
-
-/* Justification du texte explicatif */
-.text-justify {
-    text-align: justify;
-}
-
-/* Titres */
-h2, h4 {
-    color: #2c3e50;
-    font-weight: 600;
-}
-
-/* Espacement entre les sections */
+/* === ESPACEMENTS UTILES === */
 .mb-5 {
     margin-bottom: 3rem;
 }
 
-/* Conteneur principal */
-.container {
-    padding-top: 30px;
-    padding-bottom: 30px;
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1200px) {
+    .container {
+        padding: 15px;
+    }
 }
 
-/* Centrage horizontal des graphiques */
-.dcc-graph {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block;
+@media (max-width: 992px) {
+    h2, h4 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .card-body p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 576px) {
+    h2, h4 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .graph-container, .dcc-graph {
+        width: 100% !important;
+        overflow-x: auto;
+    }
+
+    .card-body p {
+        font-size: 12px;
+    }
 }

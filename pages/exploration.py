@@ -11,15 +11,20 @@ from utils.graphs import (
     top_vaccines_graph
 )
 
+
+
 # Chargement des données
 df = load_data()
 
 layout = dbc.Container([
-    html.H2("Exploration des données sur les effets secondaires", className="my-4 text-center"),
+    html.H2("Exploration des données sur les effets secondaires"),
+    html.Div(style={"margin-top": "80px"}),
 
     dbc.Row([
         dbc.Col([
+            html.H4("Répartition par genre"),
             dcc.Graph(figure=sexe_distribution_graph(df), id="graph-sexe"),
+            html.Div(style={"margin-top": "30px"}),
             html.P("""
                 Ce graphique montre une répartition déséquilibrée des effets secondaires rapportés selon le sexe. 
                 On observe que près de deux tiers des déclarations concernent des femmes. 
@@ -31,7 +36,9 @@ layout = dbc.Container([
 
     dbc.Row([
         dbc.Col([
+            html.H4("Distribution par âge"),
             dcc.Graph(figure=age_distribution_graph(df), id="graph-age"),
+            html.Div(style={"margin-top": "30px"}),
             html.P("""
                 Cette visualisation permet de comprendre quelles tranches d'âge sont les plus concernées par les effets secondaires rapportés.
                 On observe que les personnes âgées de 66 à 80 ans sont les plus touchées, avec 206 cas rapportés, suivies par la tranche 51-65 ans avec 168 cas. Ces deux tranches regroupent à elles seules la majorité des signalements, ce qui pourrait s’expliquer par une plus grande exposition vaccinale dans ces groupes prioritaires, notamment au début des campagnes de vaccination.
@@ -45,6 +52,7 @@ layout = dbc.Container([
         dbc.Col([
             html.H4("Top 10 effets secondaires"),
             dcc.Graph(figure=top_effects_graph(df), id="graph-effets"),
+            html.Div(style={"margin-top": "30px"}),
             html.P("""
                 Ce graphique présente les 10 effets secondaires les plus fréquemment déclarés suite à l'administration d'un vaccin dans notre échantillon de données.
                 En tête, on retrouve la fièvre (Pyrexia), avec plus de 70 cas rapportés, suivie de la douleur (Pain) et la dyspnée (essoufflement), avec respectivement 62 et 57 signalements. Ces réactions sont typiquement associées à la réponse immunitaire post-vaccinale.
@@ -58,14 +66,13 @@ layout = dbc.Container([
         dbc.Col([
             html.H4("Top 10 vaccins rapportés"),
             dcc.Graph(figure=top_vaccines_graph(df), id="graph-vaccins"),
+            html.Div(style={"margin-top": "30px"}),
             html.P("""
                 Ce graphique présente les 10 vaccins les plus fréquemment associés à des effets secondaires dans le jeu de données.
                 Le vaccin XOLAIR se démarque très nettement avec près de 250 cas rapportés, ce qui en fait le vaccin le plus fréquemment lié à des effets secondaires dans cet échantillon. Viennent ensuite Influenza et HUMIRA, avec respectivement environ 130 et 105 signalements, indiquant également une vigilance accrue autour de ces produits.
                 Les autres vaccins comme DEXAMETHASONE, ASPIRIN ou encore REVLIMID affichent des volumes de déclarations plus modérés, oscillant entre 70 et 60 cas. Enfin, les vaccins PREDNISONE, SOLIRIS, ENBREL et OMEPRAZOLE clôturent ce classement avec un peu moins de 50 déclarations chacun.
                 Il est essentiel de noter que ce type de visualisation ne permet pas à elle seule de conclure à une plus grande dangerosité de certains vaccins : le volume de prescriptions, les caractéristiques des patients (âge, comorbidités) ou encore le niveau de surveillance peuvent fortement influencer le nombre de signalements.
                 Ce graphique constitue toutefois un outil d’orientation utile pour cibler les produits nécessitant une analyse plus approfondie en pharmacovigilance.
-
-
             """, className="text-justify")
         ], width=12)
     ])
