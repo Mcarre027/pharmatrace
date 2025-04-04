@@ -8,7 +8,7 @@ dash.register_page(__name__, path="/", name="Accueil")
 layout = dbc.Container([
     dbc.Card(
         dbc.CardBody([
-            html.H2("Bienvenue sur le tableau de bord de pharmacovigilance", className="mb-4"),
+            html.H2("Bienvenue sur le tableau de bord de pharmacovigilance", className="mb-4 text-center"),
             html.P(
                 "Ce tableau de bord vous permet d'explorer les effets secondaires rapportés "
                 "suite à l'administration de vaccins, à partir de données réelles issues d'OpenFDA. "
@@ -16,6 +16,7 @@ layout = dbc.Container([
                 "et explorer plus en détail les tendances par âge, sexe et région.",
                 className="mt-4 text-justify"
             ),
+            html.Div(style={"height": "30px"}),
             html.Hr(),
 
             dbc.Row([
@@ -30,30 +31,26 @@ layout = dbc.Container([
             ),
 
             html.Hr(),
-            html.H4("Chiffres clés", className="mt-5 mb-3"),
-            dbc.Row([
-                dbc.Col(dbc.Card([
-                    dbc.CardBody([
-                        html.H5("+30 pays", className="card-title text-primary"),
-                        html.P("ont signalé des effets secondaires.", className="card-text")
-                    ])
-                ]), width=4),
+            html.H3("Chiffres clés", className="mt-5 mb-3 text-center"),
+            html.Div(style={"height": "30px"}),
+            html.Div([
+                html.Div([
+                    html.Div([
+                        html.H4("+30", className="text-primary"),
+                        html.P("pays ont signalé des effets secondaires.")
+                    ], className="chiffre-cle"),
 
-                dbc.Col(dbc.Card([
-                    dbc.CardBody([
-                        html.H5("+600 effets secondaires", className="card-title text-success"),
-                        html.P("différents répertoriés dans les déclarations.", className="card-text")
-                    ])
-                ]), width=4),
+                    html.Div([
+                        html.H4("+600", className="text-success"),
+                        html.P("effets secondaires répertoriés.")
+                    ], className="chiffre-cle"),
 
-                dbc.Col(dbc.Card([
-                    dbc.CardBody([
-                        html.H5("+650 vaccins", className="card-title text-warning"),
-                        html.P("associés à au moins un effet secondaire.", className="card-text")
-                    ])
-                ]), width=4),
-            ], className="mt-3")
-
+                    html.Div([
+                        html.H4("+650", className="text-warning"),
+                        html.P("vaccins associés à au moins un effet secondaire.")
+                    ], className="chiffre-cle"),
+                ], className="chiffres-cles")
+            ])
         ]), className="shadow-lg"
     )
 ], fluid=True, className="mt-5")

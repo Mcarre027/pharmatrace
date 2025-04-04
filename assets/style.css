@@ -15,7 +15,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 15px;
 }
 
-
 /* === CONTENEUR PRINCIPAL === */
 .container {
     padding-top: 20px;
@@ -42,6 +41,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* === GRAPHES PLOTLY === */
+.dcc-graph {
+    width: 100% !important;
+    max-width: 100%;
+    height: auto !important;
+    overflow-x: auto;
+}
+
 .js-plotly-plot .plotly {
     background-color: transparent !important;
 }
@@ -118,6 +124,25 @@ a:hover {
     margin-bottom: 3rem;
 }
 
+/* === CHIFFRES CLÉS RESPONSIVES === */
+.chiffres-cles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.chiffre-cle {
+    flex: 1 1 200px;
+    max-width: 300px;
+    min-width: 150px;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 12px;
+    background-color: #272b3f;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 1200px) {
     .container {
@@ -158,5 +183,10 @@ a:hover {
 
     .card-body p {
         font-size: 12px;
+    }
+
+    .chiffres-cles {
+        flex-direction: column;
+        align-items: center;
     }
 }

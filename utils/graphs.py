@@ -11,7 +11,7 @@ def sexe_distribution_graph(df):
         df_gender,
         x='Sexe', y='Nombre de cas', color='Sexe', text='Nombre de cas',
         color_discrete_sequence=['#FF6B6B', '#4ECDC4'],
-        height=450, width=700
+        height=450,
     )
     fig.update_traces(textposition='outside')
     fig.update_layout(
@@ -32,7 +32,7 @@ def age_distribution_graph(df):
     fig = px.bar(
         df_age,
         x='Tranche d\'âge', y='Nombre de cas', color='Tranche d\'âge', text='Nombre de cas',
-        height=450, width=700
+        height=450,
     )
     fig.update_traces(textposition='outside')
     fig.update_layout(
@@ -49,7 +49,7 @@ def top_effects_graph(df):
     fig = px.bar(
         top_effects,
         x='Reaction', y='Count', color='Reaction',
-        height=450, width=700
+        height=450,
     )
     fig.update_layout(xaxis_tickangle=-45, plot_bgcolor='#1e1e2f', paper_bgcolor='#1e1e2f')
     return fig
@@ -72,7 +72,7 @@ def top_vaccines_graph(df):
     fig = px.bar(
         top_vaccines,
         x='Vaccine_short', y='Count', color='Vaccine_short',
-        height=450, width=700
+        height=450, 
     )
     fig.update_layout(
         xaxis_tickangle=-30,

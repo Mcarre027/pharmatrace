@@ -19,7 +19,7 @@ def load_data():
 
     return df
 
-# Cette fonction manquait sûrement ou était mal positionnée
+
 def load_country_counts():
     df = load_data()
     country_counts = df['country'].value_counts().reset_index()
