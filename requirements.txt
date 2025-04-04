@@ -3,3 +3,4 @@ plotly
 pandas 
 dash-bootstrap-components
 pycountry
+dash-iconify
