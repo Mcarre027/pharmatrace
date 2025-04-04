@@ -21,7 +21,14 @@ layout = dbc.Container([
 
             dbc.Row([
                 dbc.Col([
-                    dcc.Graph(figure=plot_world_map(), style={"height": "500px"})
+                    html.Div(
+                        dcc.Graph(
+                            figure=plot_world_map(), 
+                            style={"width": "100%", "height": "450px"},
+                            className="centered-plot"
+                        ),
+                        className="shadow-lg rounded"
+                    )
                 ], width=12),
             ], className="my-4"),
 

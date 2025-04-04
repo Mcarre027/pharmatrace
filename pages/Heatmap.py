@@ -33,7 +33,7 @@ layout = dbc.Container([
             ),
             html.Div(id="heatmap-stats", className="text-info my-3 text-center"),
             dcc.Loading(
-                dcc.Graph(id="heatmap", className="centered-plot", style={"height": "400px"}),
+                dcc.Graph(id="heatmap", className="centered-plot", style={"height": "100%", "width": "100%"}),
                 type="default"
             ),
             html.Div(id="info-empty", className="text-muted mt-3 text-center"),
@@ -42,7 +42,6 @@ layout = dbc.Container([
                 Plus la couleur est intense, plus l’effet secondaire est fréquemment rapporté pour ce vaccin. 
                 Cela permet d’identifier rapidement les effets spécifiques à certains vaccins ainsi que les tendances générales.
             """, className="mt-4 text-justify"),
-
             html.Div(style={"height": "30px"}),
 
             html.H3("Tableau des effets secondaires", className="text-center mt-5 mb-3"),
@@ -54,11 +53,10 @@ layout = dbc.Container([
                 dcc.Download(id="download-dataframe")
             ], className="text-center mb-4"),
             html.Div(style={"height": "30px"}),
-
             html.H3("Répartition des effets secondaires", className="text-center mt-5 mb-3"),
             html.Div(style={"height": "30px"}),
             html.Div(id="barplot-container")
-        ], width=10, className="mx-auto")
+        ], width=12)
     ])
 ], fluid=True)
 
@@ -106,11 +104,11 @@ def update_heatmap(vaccin_selection):
     ))
 
     fig.update_layout(
-        margin=dict(t=40, l=200, r=20, b=200),
+        margin=dict(t=20, l=20, r=20, b=20),
         plot_bgcolor='#1e1e2f',
         paper_bgcolor='#1e1e2f',
         font=dict(color='white'),
-        height=400,
+        height=450,
         title_x=0.5
     )
 
@@ -145,7 +143,7 @@ def update_heatmap(vaccin_selection):
         title_x=0.5
     )
 
-    return fig, "", f"{nb_vaccins} vaccin(s) sélectionné(s) – {nb_effets} effets secondaires détectés", table, dcc.Graph(figure=piechart)
+    return fig, "", f"{nb_vaccins} vaccin(s) sélectionné(s) – {nb_effets} effets secondaires détectés", table, dcc.Graph(figure=piechart, style={"width": "100%"})
 
 # Callback d'export CSV
 @dash.callback(

@@ -99,10 +99,13 @@ def plot_world_map():
     )
 
     fig.update_layout(
-        margin={"r":0,"t":40,"l":0,"b":0},
-        paper_bgcolor="rgba(0,0,0,0)",
-        plot_bgcolor="rgba(0,0,0,0)",
-        geo=dict(showframe=False, showcoastlines=True)
+    margin={"r": 0, "t": 40, "l": 0, "b": 0},
+    paper_bgcolor="#1e1e2f",
+    plot_bgcolor="#1e1e2f",
+    font=dict(color="white"),
+    title_x=0.5,
+    height=450
     )
+
 
     return fig
