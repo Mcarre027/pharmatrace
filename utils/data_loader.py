@@ -15,7 +15,7 @@ def load_data():
 
     # Important pour ton application Dash :
     df['reactions'] = df['reactions'].apply(ast.literal_eval)
-    df['vaccine_name'] = df['vaccine_name'].apply(ast.literal_eval)
+    df['product_names'] = df['product_names'].apply(ast.literal_eval)
 
     return df
 

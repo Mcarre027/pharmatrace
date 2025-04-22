@@ -1,4 +1,4 @@
-date,age,age_unit,sex,reactions,country,vaccine_name
+date,age,age_unit,sex,reactions,country,product_names
 2014-04-30,65.0,801,Female,"['Fall', 'Spinal compression fracture', 'Spinal fracture', 'Ventricular extrasystoles', 'Heart rate decreased', 'Weight increased', 'Restless legs syndrome', 'Blood potassium decreased', 'Muscle spasms']",US,"['PROAIR HFA', 'INFLUENZA VACCINE']"
 2014-04-28,57.0,801,Female,"['Palmar-plantar erythrodysaesthesia syndrome', 'Off label use', 'Neuropathy peripheral', 'Disease progression', 'Thyroid cancer metastatic', 'Toxicity to various agents', 'Muscle spasms', 'Weight decreased', 'Drug intolerance', 'Pain', 'Transaminases increased']",US,"['SUTENT', 'SUTENT', 'SUTENT', 'LISINOPRIL', 'IBUPROFEN', 'INFLUENZA VACCINE', 'CALCIUM', 'IRON', 'LEVOTHYROXINE', 'MAGIC MOUTHWASH']"
 2014-02-28,63.0,801,Female,"['Application site rash', 'Application site pain', 'Application site erythema', 'Application site scab', 'Drug administered at inappropriate site']",,"['PICATO (INGENOL MEBUTATE) (0.015 %, GEL)', 'TETANUS (TETANUS VACCINE)']"

@@ -8,12 +8,10 @@ dash.register_page(__name__, path="/", name="Accueil")
 layout = dbc.Container([
     dbc.Card(
         dbc.CardBody([
-            html.H2("Bienvenue sur le tableau de bord de pharmacovigilance", className="mb-4 text-center"),
+            html.H2("Bienvenue sur le tableau de bord de pharmacovigilance – PharmaTrace", className="mb-4 text-center"),
             html.P(
-                "Ce tableau de bord vous permet d'explorer les effets secondaires rapportés "
-                "suite à l'administration de vaccins, à partir de données réelles issues d'OpenFDA. "
-                "Utilisez les onglets à gauche pour visualiser la heatmap des réactions "
-                "et explorer plus en détail les tendances par âge, sexe et région.",
+                "Ce tableau de bord interactif vous permet d'explorer les effets secondaires rapportés pour des milliers de médicaments, à partir de données réelles issues d'OpenFDA "
+                "Utilisez les onglets à gauche pour visualiser la heatmap des réactions et explorer plus en détail les tendances par principe actif, classe thérapeutique, sexe ou tranche d'âge. ",
                 className="mt-4 text-justify"
             ),
             html.Div(style={"height": "30px"}),
@@ -33,7 +31,7 @@ layout = dbc.Container([
             ], className="my-4"),
 
             html.P(
-                "Cette carte interactive présente une vue mondiale des pays ayant déclaré des effets secondaires, avec des nuances selon la fréquence des déclarations.",
+                "Cette carte interactive présente une vue mondiale des effets indésirables déclarés, avec des nuances selon la fréquence des événements et les médicaments concernés.",
                 className="mt-4 text-justify"
             ),
 
@@ -48,13 +46,13 @@ layout = dbc.Container([
                     ], className="chiffre-cle"),
 
                     html.Div([
-                        html.H4("+600", className="text-success"),
+                        html.H4("+1460", className="text-success"),
                         html.P("effets secondaires répertoriés.")
                     ], className="chiffre-cle"),
 
                     html.Div([
-                        html.H4("+650", className="text-warning"),
-                        html.P("vaccins associés à au moins un effet secondaire.")
+                        html.H4("+2880", className="text-warning"),
+                        html.P("médicaments ou principes actifs liés à au moins un effet secondaire.")
                     ], className="chiffre-cle"),
                 ], className="chiffres-cles")
             ])

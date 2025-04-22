@@ -44,20 +44,20 @@ def age_distribution_graph(df):
 def top_effects_graph(df):
     df_effects = df.explode('reactions')
     top_effects = df_effects['reactions'].value_counts().nlargest(10).reset_index()
-    top_effects.columns = ['Reaction', 'Count']
+    top_effects.columns = ['Reaction', 'Nombre de cas']
 
     fig = px.bar(
         top_effects,
-        x='Reaction', y='Count', color='Reaction',
+        x='Reaction', y='Nombre de cas', color='Reaction',
         height=450,
     )
     fig.update_layout(xaxis_tickangle=-45, plot_bgcolor='#1e1e2f', paper_bgcolor='#1e1e2f')
     return fig
 
-def top_vaccines_graph(df):
-    df_vax = df.explode('vaccine_name')
-    top_vaccines = df_vax['vaccine_name'].value_counts().nlargest(10).reset_index()
-    top_vaccines.columns = ['Vaccine', 'Count']
+def top_products_graph(df):
+    df_products = df.explode('product_names')
+    top_products = df_products['product_names'].value_counts().nlargest(10).reset_index()
+    top_products.columns = ['Produit', 'Nombre de cas']
 
     rename_dict = {
         'TETANUS (TETANUS VACCINE)': 'Tetanus',
@@ -67,11 +67,11 @@ def top_vaccines_graph(df):
         'INFLUENZA VACCINE': 'Influenza',
         'PNEUMOCOCCAL VACCINE': 'Pneumococcal'
     }
-    top_vaccines['Vaccine_short'] = top_vaccines['Vaccine'].replace(rename_dict)
+    top_products['Produit court'] = top_products['Produit'].replace(rename_dict)
 
     fig = px.bar(
-        top_vaccines,
-        x='Vaccine_short', y='Count', color='Vaccine_short',
+        top_products,
+        x='Produit court', y='Nombre de cas', color='Produit court',
         height=450, 
     )
     fig.update_layout(
